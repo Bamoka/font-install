@@ -40,8 +40,8 @@ func platformDependentInstall(fontData *FontData) (err error) {
 	// and since this tool only supports True- and OpenType fonts,
 	// this should be Okay(tm).
 	// Besides, Windows does it, so why can't I?
-	valueName := fmt.Sprintf("%v (TrueType)", fontData.FileName)
-	if err = k.SetStringValue(fontData.Name, valueName); err != nil {
+	valueName := fmt.Sprintf("%v", fontData.FileName)
+	if err = k.SetStringValue(fontData.Name " (TrueType)", valueName); err != nil {
 		// If this fails, remove the font file as well.
 		log.Error(err)
 
